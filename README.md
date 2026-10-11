@@ -5,4 +5,4 @@ A one-entry Claude plugin marketplace that installs only the
 folder from [mattpocock/skills](https://github.com/mattpocock/skills), tracking its `main` branch.
 
 Add it in Claude: **Customize → Plugins → Add marketplace → Add from a repository** → `shivss26/matt-productivity-skills`,
-then install `mattpocock-productivity`.
+then install `matt-productivity-skills`.

@@ -6,7 +6,7 @@
   },
   "plugins": [
     {
-      "name": "mattpocock-productivity",
+      "name": "matt-productivity-skills",
       "description": "Matt Pocock's productivity skills only",
       "source": {
         "source": "git-subdir",
@@ -15,5 +15,8 @@
       },
       "skills": "./"
     }
-  ]
+  ],
+  "renames": {
+    "mattpocock-productivity": "matt-productivity-skills"
+  }
 }
