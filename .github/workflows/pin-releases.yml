@@ -1,0 +1,45 @@
+name: Pin plugin sources to latest releases
+
+on:
+  # Schedule is enabled in a later step of the probe test.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pin-releases
+  cancel-in-progress: false
+
+jobs:
+  pin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pin sources to latest releases
+        id: pin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 -I .github/scripts/pin_releases.py
+
+      - name: Heartbeat
+        id: heartbeat
+        if: github.event.schedule == '0 6 1 * *'
+        run: |
+          date -u +%Y-%m-%dT%H:%M:%SZ > .github/heartbeat
+          echo "touched=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.pin.outputs.changed == 'true' || steps.heartbeat.outputs.touched == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add .claude-plugin/marketplace.json .github/heartbeat 2>/dev/null || git add .claude-plugin/marketplace.json
+          if [ "${{ steps.pin.outputs.changed }}" = "true" ]; then
+            msg="Pin plugin sources to latest upstream releases"
+          else
+            msg="Monthly heartbeat to keep the scheduled workflow enabled"
+          fi
+          git commit -m "$msg"
+          git push
