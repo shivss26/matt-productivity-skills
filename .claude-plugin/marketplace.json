@@ -1,0 +1,16 @@
+{
+  "name": "shivam-skills",
+  "owner": { "name": "Shivam" },
+  "plugins": [
+    {
+      "name": "mattpocock-productivity",
+      "description": "Matt Pocock's productivity skills only",
+      "source": {
+        "source": "git-subdir",
+        "url": "mattpocock/skills",
+        "path": "skills/productivity"
+      },
+      "skills": "./"
+    }
+  ]
+}
