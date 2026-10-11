@@ -18,20 +18,6 @@
       "skills": "./",
       "strict": false,
       "version": "1.3.1"
-    },
-    {
-      "name": "update-probe",
-      "description": "TEMPORARY test plugin: checks whether upstream skill changes propagate",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/shivss26/skill-update-probe.git",
-        "path": "skills",
-        "sha": "a22a0cad4641977428a60856d9bfe24f56aa2360",
-        "ref": "v1.0.2"
-      },
-      "skills": "./",
-      "strict": false,
-      "version": "1.0.2"
     }
   ],
   "renames": {

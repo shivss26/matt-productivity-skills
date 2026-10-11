@@ -1,7 +1,11 @@
 name: Pin plugin sources to latest releases
 
 on:
-  # Schedule is enabled in a later step of the probe test.
+  schedule:
+    # Daily check for a new upstream release.
+    - cron: "17 6 * * *"
+    # Monthly heartbeat so GitHub doesn't disable the schedule after 60 idle days.
+    - cron: "0 6 1 * *"
   workflow_dispatch:
 
 permissions:
