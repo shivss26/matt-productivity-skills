@@ -13,7 +13,8 @@
         "url": "https://github.com/mattpocock/skills.git",
         "path": "skills/productivity"
       },
-      "skills": "./"
+      "skills": "./",
+      "strict": false
     },
     {
       "name": "update-probe",
@@ -23,7 +24,8 @@
         "url": "https://github.com/shivss26/skill-update-probe.git",
         "path": "skills"
       },
-      "skills": "./"
+      "skills": "./",
+      "strict": false
     }
   ],
   "renames": {
