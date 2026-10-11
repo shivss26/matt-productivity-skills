@@ -1,6 +1,9 @@
 {
   "name": "shivam-skills",
-  "owner": { "name": "Shivam" },
+  "description": "Personal marketplace: Matt Pocock's productivity skills only",
+  "owner": {
+    "name": "Shivam"
+  },
   "plugins": [
     {
       "name": "mattpocock-productivity",
