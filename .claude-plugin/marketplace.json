@@ -10,7 +10,7 @@
       "description": "Matt Pocock's productivity skills only",
       "source": {
         "source": "git-subdir",
-        "url": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills.git",
         "path": "skills/productivity"
       },
       "skills": "./"
